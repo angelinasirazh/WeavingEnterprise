@@ -1,0 +1,10 @@
+def rightRectangle_method(f, a, b, eps):
+    # вычисление методом правых прямоугольников по правилу Рунге
+    n0 = ((b - a) / np.sqrt(eps)) + 1
+    h = (b - a) / n0
+    temp = a + h
+    sum_ = 0
+    while temp <= b:
+        sum_ += h * f(temp)
+        temp += h
+    return sum_
